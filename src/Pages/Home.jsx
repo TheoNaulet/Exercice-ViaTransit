@@ -10,20 +10,22 @@ function Home() {
 
 	useEffect(() => {
 		setRandomData(
-			data.forEach((element) => {
+			//For each element of the array data, generate a random number, and store it in the randomData array
+			randomData.forEach((element) => {
 				element.schedules[0].departure = Math.floor(
 					Math.random() * (500 - 0) + 0
 				);
 				element.schedules[1].departure = Math.floor(
 					Math.random() * (500 - 0) + 0
 				);
+				//If the first schedules is lower than the second, replace the first value by the second, and the second by the first
 				if (element.schedules[0].departure > element.schedules[1].departure) {
 					const change = element.schedules[0].departure;
 					element.schedules[0].departure = element.schedules[1].departure;
 					element.schedules[1].departure = change;
 				}
 			}),
-			data.sort(function (a, b) {
+			randomData.sort(function (a, b) {
 				return a.schedules[0].departure - b.schedules[0].departure;
 			})
 		);
@@ -32,11 +34,14 @@ function Home() {
 
 	return (
 		<div className="App">
+			{/* Logo component */}
 			<Header />
 			<div className="schedule">
 				<h1>Prochains passages</h1>
 				<div className="schedule-content">
+					{/* Station and lines who serves this stop component */}
 					<Station schedules={data} />
+					{/* For each  */}
 					{data.map((val, key) => {
 						return (
 							<Destinations

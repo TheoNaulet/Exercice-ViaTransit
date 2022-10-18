@@ -25,11 +25,11 @@
 .schedule {
 	margin: auto;
 	text-align: center;
-	width: 40vw;
-	overflow-y: hidden;
+	width: 43vw;
 }
 .schedule-content {
 	border-radius: 20px;
+	width: auto;
 }
 .schedule-content-top {
 	display: flex;

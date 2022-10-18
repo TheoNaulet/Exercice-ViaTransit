@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import l1 from "../assets/img/T1.png";
 import l2 from "../assets/img/T2.png";
 import l3 from "../assets/img/T3.png";
@@ -7,6 +7,7 @@ import Schedules from "./Schedules";
 
 function Destinations({ data, line, direction }) {
 	{
+		//if the line of the direction equals to "1", line equals to the image l1
 		if (line === "1") {
 			line = l1;
 		} else if (line === "2") {
@@ -21,6 +22,7 @@ function Destinations({ data, line, direction }) {
 		<div className="schedules-by-destination">
 			<div className="departure-content">
 				<div className="destination">
+					{/* display the image of the line */}
 					<img src={line} alt="" />
 					<h2 className="direction">{direction.toUpperCase()}</h2>
 				</div>
