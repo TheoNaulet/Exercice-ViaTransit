@@ -27,6 +27,7 @@ function Destinations({ data, line, direction }) {
 					<h2 className="direction">{direction.toUpperCase()}</h2>
 				</div>
 				<div className="departures">
+					{/* for each direction display the  */}
 					{data.schedules.map((val, key) => {
 						return (
 							<div key={key} className="time">

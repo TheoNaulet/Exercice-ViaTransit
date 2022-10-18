@@ -5,32 +5,29 @@ import Header from "../components/Header";
 import Station from "../components/Station";
 
 function Home() {
-	const [data, setDatas] = useState(schedules);
-	const [randomData, setRandomData] = useState(data);
+	const [randomData, setRandomData] = useState(schedules);
 
 	useEffect(() => {
-		setRandomData(
-			//For each element of the array data, generate a random number, and store it in the randomData array
-			randomData.forEach((element) => {
-				element.schedules[0].departure = Math.floor(
-					Math.random() * (500 - 0) + 0
-				);
-				element.schedules[1].departure = Math.floor(
-					Math.random() * (500 - 0) + 0
-				);
-				//If the first schedules is lower than the second, replace the first value by the second, and the second by the first
-				if (element.schedules[0].departure > element.schedules[1].departure) {
-					const change = element.schedules[0].departure;
-					element.schedules[0].departure = element.schedules[1].departure;
-					element.schedules[1].departure = change;
-				}
-			}),
-			randomData.sort(function (a, b) {
-				return a.schedules[0].departure - b.schedules[0].departure;
-			})
-		);
-		console.log(randomData);
-	}, []);
+		let temp = randomData;
+		temp.forEach((element) => {
+			element.schedules[0].departure = Math.floor(
+				Math.random() * (500 - 0) + 0
+			);
+			element.schedules[1].departure = Math.floor(
+				Math.random() * (500 - 0) + 0
+			);
+			//If the first schedules is lower than the second, replace the first value by the second, and the second by the first
+			if (element.schedules[0].departure > element.schedules[1].departure) {
+				const change = element.schedules[0].departure;
+				element.schedules[0].departure = element.schedules[1].departure;
+				element.schedules[1].departure = change;
+			}
+		});
+		temp.sort(function (a, b) {
+			return a.schedules[0].departure - b.schedules[0].departure;
+		});
+		setRandomData(temp);
+	}, [randomData]);
 
 	return (
 		<div className="App">
@@ -40,9 +37,9 @@ function Home() {
 				<h1>Prochains passages</h1>
 				<div className="schedule-content">
 					{/* Station and lines who serves this stop component */}
-					<Station schedules={data} />
+					<Station schedules={randomData} />
 					{/* For each  */}
-					{data.map((val, key) => {
+					{randomData.map((val, key) => {
 						return (
 							<Destinations
 								key={key}
