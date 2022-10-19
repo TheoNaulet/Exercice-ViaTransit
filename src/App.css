@@ -11,6 +11,7 @@
 	border: 3px solid black;
 	height: 70vh;
 	overflow: scroll;
+	margin-bottom: 40px;
 }
 .time {
 	margin-right: 70px;
@@ -50,12 +51,13 @@
 }
 .lines {
 	width: 50%;
-	text-align: end;
+	display: flex;
+	justify-content: end;
 	margin: 20px 20px 0 0;
 }
 .logo-line {
 	height: 30px;
-	margin-left: 5px;
+	margin-left: 10px;
 }
 .schedules-by-destination {
 	margin-top: 10px;
@@ -71,7 +73,7 @@
 }
 .departure-content {
 	width: 100%;
-	padding: 0 40px 0 40px;
+	padding: 0 30px 0 30px;
 }
 .direction {
 	margin-left: 15px;
@@ -86,12 +88,13 @@
 	margin-top: 10px;
 }
 .all-departures {
-	margin-left: 25px;
-	margin-right: 40px;
+	justify-content: flex-start;
+	margin-right: 60px;
+	margin-left: 30px;
 	width: 100%;
 }
 .departure {
-	width: 100px;
+	width: 70px;
 	font-weight: bold;
 }
 .green {
@@ -101,13 +104,13 @@
 @media screen and (max-width: 1024px) {
 	.schedule {
 		width: 70%;
+
 	}
 	.all-departures {
-		margin-right: 20px;
+		margin: 20px;
 	}
 	.schedule-content {
 		height: 80vh;
-		margin-top: 20px;
 	}
 	.stop-name {
 		font-size: 25px;
@@ -116,26 +119,27 @@
 
 @media screen and (max-width: 768px) {
 	.schedule {
-		width: 90%;
+		width: 80%;
+		
 	}
-	.stop-name {
-		font-size: 20px;
-	}
-	.logo-line {
-		width: 35px;
-		height: auto;
-	}
+
 }
 
 @media screen and (max-width: 640px) {
 	.schedule {
 		width: 90%;
 	}
+	.all-departures {
+		margin: 0;
+	}
 	.departure {
-		width: 100px;
+		width: 80px;
 	}
 	.direction {
 		font-size: 20px;
+	}
+	.all-departures {
+		margin: 0;
 	}
 	.schedule-content {
 		height: 80vh;

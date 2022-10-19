@@ -12,6 +12,12 @@ function Station(schedules) {
 		dataSchedules.map((val, key) => {
 			return allLines.push(val.line.id);
 		});
+		//Function to get each items once
+		function onlyUnique(value, index, self) {
+			return self.indexOf(value) === index;
+		}
+		//Call to the function Only Unique and put in order data
+		allLines = allLines.filter(onlyUnique).sort();
 		setLines(allLines);
 	}, []);
 
@@ -19,7 +25,11 @@ function Station(schedules) {
 		<div className="schedule-content-top">
 			{/* Stop Name */}
 			<h5 className="stop-name">Arrêt {stopName}</h5>
-			<Lines lines={lines} />
+			<div className="lines">
+				{lines.map((val, key) => {
+					return <Lines key={key} line={val} />;
+				})}
+			</div>
 		</div>
 	);
 }
