@@ -8,7 +8,7 @@ function Home() {
 	const [randomData, setRandomData] = useState(schedules);
 
 	useEffect(() => {
-		let temp = randomData;
+		let temp = JSON.parse(JSON.stringify(randomData));
 		temp.forEach((element) => {
 			element.schedules[0].departure = Math.floor(
 				Math.random() * (500 - 0) + 0
@@ -26,7 +26,10 @@ function Home() {
 		temp.sort(function (a, b) {
 			return a.schedules[0].departure - b.schedules[0].departure;
 		});
-		setRandomData(temp);
+		const interval = setInterval(() => {
+			setRandomData(temp);
+		}, 3000);
+		return () => clearInterval(interval);
 	}, [randomData]);
 
 	return (
@@ -37,7 +40,10 @@ function Home() {
 				<h1>Prochains passages</h1>
 				<div className="schedule-content">
 					{/* Station and lines who serves this stop component */}
-					<Station schedules={randomData} />
+					<Station
+						dataStation={schedules[0].stationName}
+						schedules={randomData}
+					/>
 					{/* For each  */}
 					{randomData.map((val, key) => {
 						return (

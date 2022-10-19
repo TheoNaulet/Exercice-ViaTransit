@@ -1,65 +1,69 @@
 @font-face {
 	font-family: "Ubuntu";
-	src: url("../src//assets//fonts/Ubuntu-Bold.ttf") format("bold"),
-		url("../src//assets//fonts/Ubuntu-Medium.ttf") format("medium");
+	src: url("../src/assets/fonts/Ubuntu-Medium.ttf"),
+		url("../src/assets/fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+	font-family: "Eina";
+	src: url("../src/assets/fonts/Eina_01_Bold.otf");
 }
 .schedule-content {
 	border: 3px solid black;
 	height: 70vh;
 	overflow: scroll;
 }
-* {
-	font-weight: bold;
-	font-family: 'MyWebFont', Fallback, sans-serif;
-}
 .time {
-	margin-right: 4vw;
+	margin-right: 70px;
 }
 .header {
-	padding: 2vw;
-	width: 18vw;
+	padding: 35px;
+	width: 100%;
 }
 .header img {
-	width: 18vw;
+	width: 300px;
 }
 .schedule {
 	margin: auto;
 	text-align: center;
-	width: 43vw;
+	width: 700px;
+}
+.schedule h1 {
+	font-family: "Eina";
 }
 .schedule-content {
 	border-radius: 20px;
 	width: auto;
+	font-family: "Ubuntu", Fallback, sans-serif;
 }
 .schedule-content-top {
 	display: flex;
+	font-family: "Eina";
 }
 .schedule-content-top h5 {
 	justify-content: start;
-	width: 50%;
+	width: 300px;
 	text-align: start;
-	margin: 4% 0 0 4%;
+	margin: 20px 0 0 20px;
 }
 .stop-name {
-	font-weight: 800;
+	width: 50%;
 }
 .lines {
 	width: 50%;
 	text-align: end;
-	margin: 4% 4% 0 0;
+	margin: 20px 20px 0 0;
 }
 .logo-line {
-	height: 3vh;
-	margin-left: 2%;
+	height: 30px;
+	margin-left: 5px;
 }
 .schedules-by-destination {
-	margin-top: 2%;
-	margin-bottom: 2;
+	margin-top: 10px;
 	display: flex;
 }
 .destination {
 	display: flex;
-	margin-top: 1vh;
+	margin-top: 20px;
 }
 .destination img {
 	width: 40px;
@@ -67,27 +71,28 @@
 }
 .departure-content {
 	width: 100%;
-	padding: 0 4% 0 4%;
+	padding: 0 40px 0 40px;
 }
 .direction {
-	margin-left: 1vw;
+	margin-left: 15px;
 	width: auto;
-	font-size: 2.5vh;
+	font-size: 25px;
 	font-weight: 700;
 }
 .departures {
 	width: 100%;
 	display: flex;
 	text-align: start;
-	margin-top: 1vh;
+	margin-top: 10px;
 }
 .all-departures {
-	margin-left: 1.5vw;
-	margin-right: 3vw;
+	margin-left: 25px;
+	margin-right: 40px;
 	width: 100%;
 }
 .departure {
-	width: 6vw;
+	width: 100px;
+	font-weight: bold;
 }
 .green {
 	color: green;
@@ -95,47 +100,49 @@
 
 @media screen and (max-width: 1024px) {
 	.schedule {
-		width: 60vw;
+		width: 70%;
 	}
 	.all-departures {
-		margin-right: 10vw;
-	}
-	.departure {
-		width: 8vw;
+		margin-right: 20px;
 	}
 	.schedule-content {
 		height: 80vh;
-		margin-top: 2vh;
+		margin-top: 20px;
 	}
 	.stop-name {
-		font-size: 1.7vh;
+		font-size: 25px;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.schedule {
-		width: 70vw;
-	}
-	.departure {
-		width: 10vw;
+		width: 90%;
 	}
 	.stop-name {
-		font-size: 1.6vh;
+		font-size: 20px;
+	}
+	.logo-line {
+		width: 35px;
+		height: auto;
 	}
 }
 
 @media screen and (max-width: 640px) {
 	.schedule {
-		width: 80vw;
+		width: 90%;
 	}
 	.departure {
-		width: 14vw;
+		width: 100px;
 	}
 	.direction {
-		font-size: 3.5vw;
+		font-size: 20px;
 	}
 	.schedule-content {
 		height: 80vh;
-		margin-top: 2vh;
+		margin-top: 20px;
+	}
+	.logo-line {
+		width: 35px;
+		height: auto;
 	}
 }
