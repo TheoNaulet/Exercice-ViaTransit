@@ -5,7 +5,8 @@ import Header from "../components/Header";
 import Station from "../components/Station";
 
 function Home() {
-	const [randomData, setRandomData] = useState(schedules);
+	const [randomData, setRandomData] = useState(schedules.schedules);
+	const [station, setStation] = useState(schedules.station_name);
 
 	useEffect(() => {
 		let temp = JSON.parse(JSON.stringify(randomData));
@@ -40,10 +41,7 @@ function Home() {
 				<h1>Prochains passages</h1>
 				<div className="schedule-content">
 					{/* Station and lines who serves this stop component */}
-					<Station
-						dataStation={schedules[0].stationName}
-						schedules={randomData}
-					/>
+					<Station dataStation={station} schedules={randomData} />
 					{/* For each  */}
 					{randomData.map((val, key) => {
 						return (

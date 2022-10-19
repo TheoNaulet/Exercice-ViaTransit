@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import Lines from "../components/Lines";
 
 function Station(schedules) {
-	const [stopName, setStopName] = useState("");
+	const [stopName, setStopName] = useState(schedules.dataStation);
 	const [dataSchedules, setDataSchedules] = useState(schedules.schedules);
 	const [lines, setLines] = useState([]);
 
 	useEffect(() => {
 		let allLines = [];
-		setStopName("Gare Saint-Roch");
 		// Filling an array with all lines who served this station
 		dataSchedules.map((val, key) => {
-			allLines.push(val.line.id);
+			return allLines.push(val.line.id);
 		});
 		setLines(allLines);
 	}, []);
