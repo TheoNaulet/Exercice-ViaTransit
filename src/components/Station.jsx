@@ -10,14 +10,12 @@ function Station(schedules) {
 		let allLines = [];
 		// Filling an array with all lines who served this station
 		dataSchedules.map((val, key) => {
-			return allLines.push(val.line.id);
+			if (!allLines.includes(val.line.id)) {
+				return allLines.push(val.line.id);
+			}
 		});
-		//Function to get each items once
-		function onlyUnique(value, index, self) {
-			return self.indexOf(value) === index;
-		}
-		//Call to the function Only Unique and put in order data
-		allLines = allLines.filter(onlyUnique).sort();
+		//Put in order data
+		allLines = allLines.sort();
 		setLines(allLines);
 	}, []);
 

@@ -11,12 +11,8 @@ function Home() {
 	useEffect(() => {
 		let temp = JSON.parse(JSON.stringify(randomData));
 		temp.forEach((element) => {
-			element.schedules[0].departure = Math.floor(
-				Math.random() * (500 - 0) + 0
-			);
-			element.schedules[1].departure = Math.floor(
-				Math.random() * (500 - 0) + 0
-			);
+			element.schedules[0].departure = Math.floor(Math.random() * 500);
+			element.schedules[1].departure = Math.floor(Math.random() * 500);
 			//If the first schedules is lower than the second, replace the first value by the second, and the second by the first
 			if (element.schedules[0].departure > element.schedules[1].departure) {
 				const change = element.schedules[0].departure;

@@ -5,9 +5,7 @@ function Header() {
 		<div className="header">
 			{/* Logo ViaTransit */}
 			<img
-				className=""
-				src={require("../assets/img/logo_wide_blue.png")}
-				alt="logo viaTransit"
+				className="" src={require("../assets/img/logo_wide_blue.png")} alt="logo viaTransit"
 			/>
 		</div>
 	);
