@@ -24,6 +24,7 @@ function Station(schedules) {
 			{/* Stop Name */}
 			<h5 className="stop-name">Arrêt {stopName}</h5>
 			<div className="lines">
+				{/* For each item of the lines's array, dsiplay the component Lines */}
 				{lines.map((val, key) => {
 					return <Lines key={key} line={val} />;
 				})}
